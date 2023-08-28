@@ -24,6 +24,7 @@ class WindowCapture:
         self.offset_y = window_rect[1] + self.titlebar_pixels
 
     def get_screenshot(self):
+        # Fast screen capture code from https://stackoverflow.com/questions/3586046/fastest-way-to-take-a-screenshot-with-python-on-windows
         wDC = win32gui.GetWindowDC(self.hwnd)
         dcObj=win32ui.CreateDCFromHandle(wDC)
         cDC=dcObj.CreateCompatibleDC()
